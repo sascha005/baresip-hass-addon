@@ -12,18 +12,10 @@ arch:
 startup: application
 boot: auto
 init: false
-timeout: 30
-image: "ghcr.io/sascha005/{arch}-baresip-sip-client"
 host_network: true
-host_dbus: true
-privileged:
-  - NET_ADMIN
-  - NET_RAW
 map:
-  - type: share
-    read_only: false
-  - type: config
-    read_only: false
+  - share:rw
+  - config:rw
 options:
   sip_server: "sip.placetel.de"
   sip_username: ""
