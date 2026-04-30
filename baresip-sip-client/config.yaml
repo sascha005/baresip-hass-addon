@@ -1,7 +1,7 @@
 name: "Baresip SIP Client"
 version: "1.0.0"
-slug: baresip_sip_client
-description: "Lightweight SIP client for Home Assistant VoIP integration"
+slug: "baresip-sip-client"
+description: "Lightweight SIP client for Home Assistant VoIP"
 url: "https://github.com/sascha005/baresip-hass-addon"
 arch:
   - aarch64
