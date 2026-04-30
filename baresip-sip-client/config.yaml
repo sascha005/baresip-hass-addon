@@ -1,24 +1,29 @@
-name: "Baresip SIP Client"
-version: "1.0.0"
+name: Baresip SIP Client
+version: 1.0.0
 slug: baresip_sip_client
-description: "Lightweight SIP client for Home Assistant VoIP integration with Placetel"
-url: "https://github.com/sascha005/baresip-hass-addon"
+description: Lightweight SIP client for Home Assistant VoIP integration with Placetel
+url: https://github.com/sascha005/baresip-hass-addon
 arch:
-  - aarch64
-  - amd64
-  - armhf
-  - armv7
-  - i386
+- aarch64
+- amd64
+- armhf
+- armv7
+- i386
 startup: application
 boot: auto
 init: false
+image: baresip-sip-client
 host_network: true
+host_dbus: false
+map:
+- share:rw
+- config:rw
 options:
-  sip_server: "sip.placetel.de"
+  sip_server: sip.placetel.de
   sip_username: ""
   sip_password: ""
-  sip_displayname: "Home Assistant"
-  ha_webhook: "http://homeassistant.local:8123/api/webhook/voip_call"
+  sip_displayname: Home Assistant
+  ha_webhook: http://homeassistant.local:8123/api/webhook/voip_call
   ha_token: ""
 schema:
   sip_server: str
@@ -27,7 +32,3 @@ schema:
   sip_displayname: str
   ha_webhook: str
   ha_token: password
-map:
-  - share:rw
-  - config:rw
-  - ssl
